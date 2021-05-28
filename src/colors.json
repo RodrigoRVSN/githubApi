@@ -1,0 +1,13 @@
+{
+    "white": "#FFFFFF",
+
+    "light_gray": "#0000001D",
+    "gray": "#E5E5E5",
+    "dark_gray": "#535353",
+
+    "yellow": "#FFCE00",
+    
+    "light_black": "#292929",
+    "black": "#030202",
+    "dark_black": "#000000"
+}
