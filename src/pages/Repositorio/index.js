@@ -4,7 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 import { api } from '../../api/api';
 import { useAuth } from '../../providers/auth';
 import { useRoute } from '../../providers/route';
-import { Card, CorpoRepositorios, Header } from './styles';
+import { Card, CorpoRepositorios, Header, IconsDiv } from './styles';
+import { FaLock, FaRegStar, FaUnlock, FaArrowLeft } from 'react-icons/fa';
+
+import colors from '../../colors.json';
 
 export default function PaginaRepositorio() {
     const { usuario, setUsuario } = useAuth();
@@ -16,7 +19,7 @@ export default function PaginaRepositorio() {
     useEffect(() => {
         async function getItems() {
             try {
-                const { data } = await api.get("/users/RodrigoRVSN/repos");
+                const { data } = await api.get("/users/allyfx/repos");
                 setRepositorio(data);
             } catch (error) {
                 alert("Ocorreu um erro ao buscar os items: " + error);
@@ -28,19 +31,26 @@ export default function PaginaRepositorio() {
     return (
         <>
             <Header>
-                <h4>{usuario.name}</h4>
+                <Link to='/inicio' onClick={() => setRota(history.location.pathname)}>
+                    <FaArrowLeft />
+                </Link>
+                <h3>{repositorio?.length} repositórios</h3>
             </Header>
 
             <CorpoRepositorios>
                 <ul>
 
                     {repositorio?.map((repositorio) => (
-                        <Card key={repositorio.id} >
-                            <h2>{repositorio.name}</h2>
-                            <h3>{repositorio.description}</h3>
-                            <h4>{repositorio.stargazers_count}</h4>
-                            {/* colocar icones  star locked e unlocked */}
-                        </Card>
+                        <a target="_blank" rel="noreferrer" href={repositorio.html_url}>
+                            <Card key={repositorio.id} >
+                                <h3>{repositorio.name}</h3>
+                                <h4>{repositorio.description}</h4>
+                                <IconsDiv>
+                                    <h4><FaRegStar style={{ color: `${colors.yellow}` }} />{repositorio.stargazers_count} -  {repositorio.language}</h4>
+                                    <h5><FaUnlock style={{ color: `green` }} /> <FaLock style={{ color: `red` }} /></h5>
+                                </IconsDiv>
+                            </Card>
+                        </a>
                     ))}
 
                 </ul>

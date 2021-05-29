@@ -3,27 +3,65 @@ import colors from '../../colors.json';
 
 export const Header = styled.header`
     background-color: ${colors.black};
-    height: 5vh;
+    color: ${colors.white};
+    height: 10vh;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 2rem;
+    h3{
+        font-size: 1.3rem;
+        padding: 5rem;
+    }
+    a{
+        text-decoration: none;
+        color: ${colors.white};
+    }
 `;
 
 export const CorpoRepositorios = styled.div`
-    height: 85vh;
+    height: 80vh;
     bottom: 0;
     display: flex;
     flex-direction: column;
     color: ${colors.white};
     overflow-y: scroll;
+    a{
+        text-decoration: none;
+    }
 `;
 
 export const Card = styled.li`
     padding: 2rem;
     background-color:${colors.dark};;
     height: 100%rem;
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     color: ${colors.white};
     border-bottom: 2px solid ${colors.dark_gray};
+    h3{
+        font-size: 1.3rem;
+    }
+    h4{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        gap: 0.5rem;
+        color: ${colors.gray};
+    }
+`;
+
+export const IconsDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    h5{
+        align-items: center;
+        font-size: 1.1rem;
+        display: flex;
+        gap: 1rem;
+    }
 `;
 
