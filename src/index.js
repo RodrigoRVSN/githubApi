@@ -23,7 +23,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: Helvetica, sans-serif;
     overflow: hidden;
   }
-  
+
+  a{
+    text-decoration: none;
+    color: ${colors.white};
+  }
+
   ::-webkit-scrollbar{
     width: 1rem;
   }

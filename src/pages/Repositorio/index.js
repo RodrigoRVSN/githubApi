@@ -22,8 +22,9 @@ export default function PaginaRepositorio() {
 
     useEffect(() => {
         async function getItems() {
+            console.log(usuario)
             try {
-                const { data } = await api.get("/users/allyfx/repos");
+                const { data } = await api.get(`/users/${usuario.login}/repos`);
                 setRepositorio(data);
             } catch (error) {
                 console.log("Ocorreu um erro ao buscar os items: " + error);

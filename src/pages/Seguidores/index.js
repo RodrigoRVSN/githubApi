@@ -20,7 +20,7 @@ export default function PaginaSeguidores() {
     useEffect(() => {
         async function getItems() {
             try {
-                const { data } = await api.get("/users/RodrigoRVSN/followers");
+                const { data } = await api.get(`/users/${usuario.login}/followers`);
                 setSeguidores(data);
             } catch (error) {
                 console.log("Ocorreu um erro ao buscar os items: " + error);

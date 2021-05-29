@@ -20,7 +20,7 @@ export default function PaginaSeguindo() {
     useEffect(() => {
         async function getItems() {
             try {
-                const { data } = await api.get("/users/TutoDS/following");
+                const { data } = await api.get(`/users/${usuario.login}/following`);
                 setSeguindo(data);
             } catch (error) {
                 console.log("Ocorreu um erro ao buscar os items: " + error);

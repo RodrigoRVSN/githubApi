@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/auth';
 import { useRoute } from '../../providers/route';
 import { BioInicio, CorpoInicio, DescricaoInicio, DivMetricas, Header, ImgInicio, MetricasInicio } from './styles';
+import { MdExitToApp } from "react-icons/md";
+import colors from '../../colors.json';
 
 export default function PaginaInicio() {
     const { usuario, setUsuario } = useAuth();
@@ -10,10 +12,20 @@ export default function PaginaInicio() {
 
     let history = useHistory();
 
+    function Quit() {
+        localStorage.removeItem('userKey');
+        setUsuario('');
+        setRota(history.location.pathname);
+    }
+
+
     return (
         <>
             <Header>
-                <h4>{usuario.name}</h4>
+                <h3>#{usuario.login}</h3>
+                <Link to='/' onClick={Quit}>
+                    <h4>Sair <MdExitToApp style={{ color: `red` }} /></h4>
+                </Link>
             </Header>
             <CorpoInicio>
                 <ImgInicio src={usuario.avatar_url} alt={usuario.avatar_url}></ImgInicio>

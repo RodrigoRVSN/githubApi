@@ -3,8 +3,21 @@ import colors from '../../colors.json';
 
 export const Header = styled.header`
     background-color: ${colors.black};
+    color: ${colors.white};
     height: 15vh;
-    top: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    h4{
+        font-size: 1.2rem;
+        font-weight: 100;
+        display: flex;
+        gap: 1rem;
+    }
+    svg{
+        font-size: 1.8rem;
+    }
 `;
 
 export const CorpoInicio = styled.div`
@@ -58,10 +71,6 @@ export const MetricasInicio = styled.div`
     h3{
         font-size: 1rem;
         font-weight: 100;
-    }
-    a{
-        color: ${colors.white};
-        text-decoration: none;
     }
 `;
 
