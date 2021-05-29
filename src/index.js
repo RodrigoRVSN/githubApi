@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+import colors from './colors.json';
 import { createGlobalStyle } from 'styled-components';
 import { AuthProvider } from './providers/auth';
 
@@ -11,6 +12,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     outline: 0;
+  }
+
+  body{
+    z-index: 0;
+    background-color: ${colors.light_black};
+    width: 100vw;
+    height: 100vh;
   }
   
   ::-webkit-scrollbar{

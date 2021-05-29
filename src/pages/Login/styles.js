@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import colors from '../../colors.json';
 
 export const Body = styled.div`
-    background-color: ${colors.light_black};
     width: 100vw;
     height: 100vh;
     display: flex;
