@@ -6,12 +6,12 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path='/' exact component={Login} />
-          <Routes />
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route path='/' exact component={Login} />
+            <Routes />
+          </Switch>
+        </Router>
     </>
   );
 }

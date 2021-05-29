@@ -8,7 +8,6 @@ export const Navbar = styled.nav`
     border-radius: 1rem 1rem 0 0;
     display: flex;
     bottom: 0;
-    position: absolute;
     align-items: center;
     justify-content: space-evenly;
 `;

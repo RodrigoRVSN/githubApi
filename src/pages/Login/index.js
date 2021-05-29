@@ -20,7 +20,8 @@ export default function Login() {
     }
 
     async function Entrar() {
-        await api.get(`users/${nome}`)
+        //await api.get(`users/${nome}`)
+        await api.get(`users/RodrigoRVSN`)
             .then((response) => setUsuario(response.data))
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);

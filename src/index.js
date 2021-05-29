@@ -5,6 +5,7 @@ import App from './App';
 import colors from './colors.json';
 import { createGlobalStyle } from 'styled-components';
 import { AuthProvider } from './providers/auth';
+import { RouthContext, RouthProvider } from './providers/route';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,7 +19,9 @@ const GlobalStyle = createGlobalStyle`
     z-index: 0;
     background-color: ${colors.light_black};
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    overflow: hidden;
   }
   
   ::-webkit-scrollbar{
@@ -35,8 +38,10 @@ ReactDOM.render(
 
   <React.StrictMode>
     <AuthProvider>
-      <GlobalStyle />
-      <App />
+      <RouthProvider>
+        <GlobalStyle />
+        <App />
+      </RouthProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
