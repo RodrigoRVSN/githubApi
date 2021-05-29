@@ -4,7 +4,7 @@ export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props) => {
     const [usuario, setUsuario] = useState({
-        login: '',
+        login: `${localStorage.getItem('userKey')}`,
         name: '',
         avatar_url: '',
         email: '',

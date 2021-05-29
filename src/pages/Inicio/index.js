@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../providers/auth';
 import { useRoute } from '../../providers/route';
 import { BioInicio, CorpoInicio, DescricaoInicio, DivMetricas, Header, ImgInicio, MetricasInicio } from './styles';
 import { MdExitToApp } from "react-icons/md";
 import colors from '../../colors.json';
+import { api } from '../../api/api';
 
 export default function PaginaInicio() {
     const { usuario, setUsuario } = useAuth();
@@ -18,6 +19,17 @@ export default function PaginaInicio() {
         setRota(history.location.pathname);
     }
 
+    useEffect(() => {
+        async function getItems() {
+            try {
+                const { data } = await api.get(`/users/${usuario.login}`);
+                setUsuario(data);
+            } catch (error) {
+                console.log("Ocorreu um erro ao buscar os items: " + error);
+            }
+        }
+        getItems();
+    }, []);
 
     return (
         <>

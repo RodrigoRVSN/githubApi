@@ -25,6 +25,7 @@ export default function Login() {
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
+            
         localStorage.setItem('userKey', nome);
         history.push('/inicio');
     }
