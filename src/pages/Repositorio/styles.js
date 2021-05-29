@@ -1,41 +1,9 @@
 import styled from 'styled-components';
 import colors from '../../colors.json';
 
-export const Header = styled.header`
-    background-color: ${colors.black};
-    color: ${colors.white};
-    height: 10vh;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    padding: 2rem;
-    h3{
-        font-size: 1.3rem;
-        padding: 5rem;
-    }
-    a{
-        text-decoration: none;
-        color: ${colors.white};
-    }
-`;
-
-export const CorpoRepositorios = styled.div`
-    height: 80vh;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    color: ${colors.white};
-    overflow-y: scroll;
-    a{
-        text-decoration: none;
-    }
-`;
-
 export const Card = styled.li`
     padding: 2rem;
-    background-color:${colors.dark};;
+    background-color:${colors.dark};
     height: 100%rem;
     flex-direction: column;
     align-items: left;

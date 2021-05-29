@@ -1,13 +1,17 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+
 import { Link, useHistory } from 'react-router-dom';
 import { api } from '../../api/api';
+
 import { useAuth } from '../../providers/auth';
 import { useRoute } from '../../providers/route';
-import { Card, CorpoRepositorios, Header, IconsDiv } from './styles';
+
+import { Card, CorpoRepositorios, IconsDiv } from './styles';
+import { Header } from '../../components/Header/styles';
 import { FaLock, FaRegStar, FaUnlock, FaArrowLeft } from 'react-icons/fa';
 
 import colors from '../../colors.json';
+import { CorpoPagina } from '../../components/CorpoPagina/styles';
 
 export default function PaginaRepositorio() {
     const { usuario, setUsuario } = useAuth();
@@ -22,7 +26,7 @@ export default function PaginaRepositorio() {
                 const { data } = await api.get("/users/allyfx/repos");
                 setRepositorio(data);
             } catch (error) {
-                alert("Ocorreu um erro ao buscar os items: " + error);
+                console.log("Ocorreu um erro ao buscar os items: " + error);
             }
         }
         getItems();
@@ -37,7 +41,7 @@ export default function PaginaRepositorio() {
                 <h3>{repositorio?.length} repositórios</h3>
             </Header>
 
-            <CorpoRepositorios>
+            <CorpoPagina>
                 <ul>
 
                     {repositorio?.map((repositorio) => (
@@ -54,7 +58,7 @@ export default function PaginaRepositorio() {
                     ))}
 
                 </ul>
-            </CorpoRepositorios>
+            </CorpoPagina>
         </>
     )
 }
