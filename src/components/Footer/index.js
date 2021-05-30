@@ -11,8 +11,7 @@ const Footer = () => {
 
     let history = useHistory();
 
-    function whereRoute(event) {
-        event.preventDefault();
+    function whereRoute() {
         setRoute(history.location.pathname);
     }
 
