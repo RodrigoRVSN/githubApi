@@ -45,7 +45,9 @@ export default function PaginaSeguidores() {
                         <CardComunidade key={seguidores.id} >
                             <ImgComunidade src={seguidores.avatar_url}></ImgComunidade>
                             <h3>{seguidores.login}</h3>
-                            <FaArrowRight />
+                            <Link to='/outrousuario' onClick={() => localStorage.setItem('otherUser', seguidores.login)}>
+                                <FaArrowRight />
+                            </Link>
                         </CardComunidade>
                     ))}
 

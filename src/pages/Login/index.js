@@ -7,6 +7,9 @@ import { useAuth } from '../../providers/auth';
 import { api } from '../../api/api';
 import { useHistory } from 'react-router-dom';
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Login() {
     const { setUsuario } = useAuth();
     const [nome, setNome] = useState('');
@@ -21,18 +24,25 @@ export default function Login() {
 
     async function Entrar() {
         await api.get(`users/${nome}`)
-            .then((response) => setUsuario(response.data))
+            .then((response) =>
+                setUsuario(response.data)
+            )
+            .then(() =>
+                localStorage.setItem('userKey', nome)
+            )
+            .then(() =>
+                history.push('/inicio')
+            )
             .catch((err) => {
-                console.error("ops! ocorreu um erro" + err);
+                history.push('/');
+                toast.error('Usuário não encontrado! ' + err);
             });
-            
-        localStorage.setItem('userKey', nome);
-        history.push('/inicio');
-    }
 
+    }
 
     return (
         <>
+            <ToastContainer />
             <Body>
                 <FaGithub size={90} color={colors.yellow} />
                 <Input placeholder="Usuário" onChange={handleChange} />

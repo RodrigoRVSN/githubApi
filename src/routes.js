@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import { useAuth } from './providers/auth';
 import { EstaLogado } from './providers/EstaLogado';
+import PaginOutroUsuario from './pages/OutroUsuario';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -35,6 +36,7 @@ export default function Routes() {
                 <PrivateRoute path='/repositorio' component={PaginaRepositorio} />
                 <PrivateRoute path='/seguidores' component={PaginaSeguidores} />
                 <PrivateRoute path='/seguindo' component={PaginaSeguindo} />
+                <PrivateRoute path='/outrousuario' component={PaginOutroUsuario} />
             </Switch>
             <Footer />
         </Router>

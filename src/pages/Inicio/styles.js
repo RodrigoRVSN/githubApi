@@ -5,15 +5,15 @@ export const Header = styled.header`
     background-color: ${colors.black};
     color: ${colors.white};
     height: 15vh;
-    padding: 2rem;
+    padding: 2rem 1.2rem;
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
     h4{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 100;
         display: flex;
-        gap: 1rem;
+        gap: 0.6rem;
     }
     svg{
         font-size: 1.8rem;
@@ -41,11 +41,13 @@ export const ImgInicio = styled.img`
 `;
 
 export const DescricaoInicio = styled.div`
+    background-color: ${colors.light_black};
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: left;
     border-left: 4px solid ${colors.yellow};
+    border-right: 4px solid ${colors.yellow};
     h2{
         text-transform: uppercase;
     }
@@ -79,9 +81,11 @@ export const DivMetricas = styled.div`
 `;
 
 export const BioInicio = styled.div`
+    background-color: ${colors.light_black};
     padding: 2rem;
     gap: 2rem;
     border-left: 4px solid ${colors.yellow};
+    border-right: 4px solid ${colors.yellow};
     border-radius: 1rem;
     font-size: 1rem;
     h3{

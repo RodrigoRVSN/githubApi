@@ -29,6 +29,7 @@ export default function PaginaSeguindo() {
         getItems();
     }, []);
 
+
     return (
         <>
             <Header>
@@ -45,7 +46,9 @@ export default function PaginaSeguindo() {
                         <CardComunidade key={seguindo.id} >
                             <ImgComunidade src={seguindo.avatar_url}></ImgComunidade>
                             <h3>{seguindo.login}</h3>
-                            <FaArrowRight />
+                            <Link to='/outrousuario' onClick={() => localStorage.setItem('otherUser', seguindo.login)} >
+                                <FaArrowRight />
+                            </Link>
                         </CardComunidade>
                     ))}
 
