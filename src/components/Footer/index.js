@@ -1,18 +1,21 @@
 import React from 'react';
 import { FaGithub, FaHome, FaUsers } from 'react-icons/fa';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { DivIcon, Navbar } from './styles';
 
 import colors from '../../colors.json';
 import { useRoute } from '../../providers/route';
 
 const Footer = () => {
-    const { setRoute } = useRoute();
+    const { route, setRoute } = useRoute();
 
     let history = useHistory();
+    useLocation();
 
     function whereRoute() {
-        setRoute(history.location.pathname);
+        if (route !== history.location.pathname) {
+            setRoute(history.location.pathname);
+        }
     }
 
     return (

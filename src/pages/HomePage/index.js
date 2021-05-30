@@ -31,7 +31,7 @@ export default function HomePage() {
             }
         }
         getItems();
-    }, [setUser, user.login]);
+    }, [history.location.pathname, setRoute, setUser, user.login]);
 
     return (
         <>
