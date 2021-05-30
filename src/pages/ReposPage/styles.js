@@ -4,7 +4,6 @@ import colors from '../../colors.json';
 export const Card = styled.li`
     padding: 2rem;
     background-color:${colors.dark};
-    height: 100%rem;
     flex-direction: column;
     align-items: left;
     color: ${colors.white};

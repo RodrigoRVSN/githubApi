@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../colors.json';
 
-export const CardComunidade = styled.li`
+export const CardComunity = styled.li`
     background-color:${colors.dark};
     color: ${colors.white};
     padding: 2rem 1rem;

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props) => {
-    const [usuario, setUsuario] = useState({
+    const [user, setUser] = useState({
         login: `${localStorage.getItem('userKey')}`,
         name: '',
         avatar_url: '',
@@ -23,7 +23,7 @@ export const AuthProvider = (props) => {
     });
 
     return (
-        <AuthContext.Provider value={{ usuario, setUsuario }}>
+        <AuthContext.Provider value={{ user, setUser }}>
             {props.children}
         </AuthContext.Provider>
     );

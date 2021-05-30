@@ -9,29 +9,29 @@ import { useHistory } from 'react-router-dom';
 
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRoute } from '../../providers/route';
 
 export default function Login() {
-    const { setUsuario } = useAuth();
-    const [nome, setNome] = useState('');
-    const [valido, setValido] = useState(false);
+    const { setUser } = useAuth();
+    const { setRoute } = useRoute();
+    const [name, setName] = useState('');
+    const [valid, setValid] = useState(false);
 
     let history = useHistory();
 
     function handleChange(e) {
-        setNome(e.target.value);
-        (e.target.value !== '') ? setValido(true) : setValido(false);
+        setName(e.target.value);
+        (e.target.value !== '') ? setValid(true) : setValid(false);
     }
 
     async function Entrar() {
-        await api.get(`users/${nome}`)
-            .then((response) =>
-                setUsuario(response.data)
-            )
-            .then(() =>
-                localStorage.setItem('userKey', nome)
-            )
-            .then(() =>
+        await api.get(`users/${name}`)
+            .then((response) => {
+                setUser(response.data)
+                localStorage.setItem('userKey', name)
                 history.push('/inicio')
+                setRoute(history.location.pathname)
+            }
             )
             .catch((err) => {
                 history.push('/');
@@ -46,8 +46,8 @@ export default function Login() {
             <Body>
                 <FaGithub size={90} color={colors.yellow} />
                 <Input placeholder="Usuário" onChange={handleChange} />
-                <Obrigatorio hidden={valido}>Campo obrigatorio!</Obrigatorio>
-                <Button onClick={Entrar} disabled={!valido} >ENTRAR <FaArrowRight /></Button>
+                <Obrigatorio hidden={valid}>Campo obrigatorio!</Obrigatorio>
+                <Button onClick={Entrar} disabled={!valid} >ENTRAR <FaArrowRight /></Button>
             </Body>
         </>
     )

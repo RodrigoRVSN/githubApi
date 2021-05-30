@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../colors.json';
 
-export const ImgComunidade = styled.img`
+export const ImgComunity = styled.img`
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
