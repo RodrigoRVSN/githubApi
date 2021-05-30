@@ -7,15 +7,14 @@ import colors from '../../colors.json';
 import { useRoute } from '../../providers/route';
 
 const Footer = () => {
-    const { route, setRoute } = useRoute();
+    const { setRoute } = useRoute();
 
     let history = useHistory();
     useLocation();
 
     function whereRoute() {
-        if (route !== history.location.pathname) {
-            setRoute(history.location.pathname);
-        }
+        setRoute(history.location.pathname);
+
     }
 
     return (
