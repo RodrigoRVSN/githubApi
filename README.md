@@ -1,7 +1,7 @@
 # Site que utiliza a API do github
 
 #####  Realizado para fazer um gerenciamento de usuário, que apresenta seus repositórios, seguidores e pessoas que segue, em que há a opção de trocar o usuário selecionado para ver seus respectivos dados públicos como usuário principal.
-#####  Os dados são salvos com o uso de contexto e no localStorage, para caso o usuário recarregue a página, o perfil ainda esteja presente. O localstorage também foi utilizado para salvar um usuário selecionado, que substitui o principal.
+#####  Os dados são salvos com o uso de contexto e no localStorage, para caso o usuário recarregue a página, o perfil ainda esteja presente. O localstorage também foi utilizado para salvar um usuário selecionado, que substitui o principal no caso de confirmação.
 
 #### Site disponível em: https://api-github-rodrigorvsn.vercel.app/
 
